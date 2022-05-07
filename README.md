@@ -4,8 +4,6 @@
 
 现已支持验证码识别+自动填写～
 
-**目前需要手动修改`clock-in.py`第74行的`eai-sess`字段（可以在 Chrome 浏览器中查看 https://healthreport.zju.edu.cn/ 自己的 cookies 信息并进行替换）**
-
 ## 使用须知
 
 ZJU 打卡脚本参考样例 by：Tenderness

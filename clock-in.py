@@ -194,6 +194,11 @@ def main(username, password, eai_sess):
             print(res['m'])
             if res['m'].find("已经") != -1: # 已经填报过了 不报错
                 pass
+            elif res['m'].find("验证码错误") != -1: # 验证码错误
+                print('再次尝试')
+                time.sleep(5)
+                main(username, password, eai_sess)
+                pass
             else:
                 raise Exception
     except Exception:
