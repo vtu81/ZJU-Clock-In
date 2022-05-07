@@ -31,7 +31,7 @@ class ClockIn(object):
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
     }
     
-    def __init__(self, username, password):
+    def __init__(self, username, password, eai_sess):
         self.username = username
         self.password = password
         self.eai_sess = eai_sess
@@ -156,7 +156,7 @@ class DecodeError(Exception):
     pass
 
 
-def main(username, password):
+def main(username, password, eai_sess):
     """Hit card process
     Arguments:
         username: (str) 浙大统一认证平台用户名（一般为学号）
@@ -167,7 +167,7 @@ def main(username, password):
           datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     print("🚌 打卡任务启动")
 
-    dk = ClockIn(username, password)
+    dk = ClockIn(username, password, eai_sess)
 
     print("登录到浙大统一身份认证平台...")
     try:
